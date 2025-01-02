@@ -23,26 +23,25 @@ export default function Home() {
   
   return (
     <div className="prose">
-      <h1>Latest Blog Posts</h1>
+      <h1 className="p-4">Latest Blog Posts</h1>
       <ul>
         {posts.map((post: Post) => (
-          <li key={post.id}>
-            <h2 className="text-2xl p-2">{post.title}</h2>
-            <p>{post.content}</p>
+          <div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
             {user ? (
               <div className="flex w-full">
                 <button className="btn btn-primary">Like</button>
-                <div  className="divider divider-start"></div>
                 <button className="btn btn-active">Comment</button>
               </div>
             ) : (
               <div className="card-actions justify">
                   <Link href={'/login'} className="btn btn-active">Like</Link>
-                  <div  className="divider divider-start"></div>
                 <Link href={'/login'} className="btn btn-active">Comment</Link>
               </div>
-              )}
-          </li>
+            )}
+            <div className="divider"></div>
+          </div>
         ))}
       </ul>
     </div>

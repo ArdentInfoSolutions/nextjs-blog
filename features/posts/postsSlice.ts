@@ -4,7 +4,7 @@ import { postsExtraReducers } from './postsReducers';
 export interface Post {
   id: string;
   title: string;
-  content: string;
+  body: string;
 }
 
 export interface PostsState {
